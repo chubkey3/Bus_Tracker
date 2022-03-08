@@ -82,7 +82,9 @@ async function call(){
     let response = await fetch('https://api.translink.ca/rttiapi/v1/stops/61112/estimates?apikey=8dBFRSNBr4HQDO6mi9Ee&count=1', {
         headers: {
             'content-type': "application/JSON"
-        );
+            }
+        }
+    );
     let json = await response.json();
     /*
     let data = await response.text();
