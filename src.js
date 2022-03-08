@@ -83,6 +83,7 @@ async function call(){
         headers: {
             'content-type': "application/JSON"
         );
+    let json = await response.json();
     /*
     let data = await response.text();
 
