@@ -78,7 +78,7 @@ function tConvert (time) {
 }
 
 async function call(){
-    let response = await fetch('https://api.translink.ca/rttiapi/v1/stops/61097/estimates?apikey=8dBFRSNBr4HQDO6mi9Ee&count=1');
+    let response = await fetch('https://api.translink.ca/rttiapi/v1/stops/61112/estimates?apikey=8dBFRSNBr4HQDO6mi9Ee&count=1');
     let data = await response.text();
 
     //let test = parseXml(data);
