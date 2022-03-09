@@ -109,7 +109,7 @@ async function call(){
 function updatetime(){
     const updated_time = new Date();
     //var udisplay = document.getElementById('updated_display').textContent = "Last Updated: " + tConvert(addZero(updated_time.getHours()) + ":" + addZero(updated_time.getMinutes()) + ":" + addZero(updated_time.getSeconds()));
-    var udispalay = document.getElementById('updated_display').textContent = "Updated "+ Math.floor((updated_time-lasttime)/1000) + "Seconds Ago";
+    var udispalay = document.getElementById('updated_display').textContent = "Updated "+ Math.floor((updated_time-lasttime)/1000) + " Second(s) Ago";
 }
 
 function toggle(){
