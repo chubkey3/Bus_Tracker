@@ -137,7 +137,7 @@ settheme();
 
 window.onload = call;
 
-var interval = window.setInterval(call, 1000);
+var interval = window.setInterval(call, 30000); //automatically update every 30 seconds
 
 /*
 To be added
