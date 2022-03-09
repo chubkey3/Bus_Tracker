@@ -85,12 +85,24 @@ async function call(){
     let json_data =  parseXml(data);
     let json = JSON.parse(JSON.stringify(xmlToJson(json_data)));
     
-    const time = (json["NextBuses"]["NextBus"]["Schedules"]["Schedule"]["ExpectedLeaveTime"]["#text"]).split(" ")[0];
-    const countdown = (json["NextBuses"]["NextBus"]["Schedules"]["Schedule"]["ExpectedCountdown"]["#text"]).split(" ")[0];
+    var tdisplay = document.getElementById('time_display')
+    var cdisplay = document.getElementById('countdown_display')
+    
     const updated_time = new Date();
-    var tdisplay = document.getElementById('time_display').textContent = "Scheduled Departure: " + time;
-    var cdisplay = document.getElementById('countdown_display').textContent = "In " + countdown + " Minute(s)";
     var udisplay = document.getElementById('updated_display').textContent = "Last Updated: " + tConvert(addZero(updated_time.getHours()) + ":" + addZero(updated_time.getMinutes()) + ":" + addZero(updated_time.getSeconds()));
+    
+    try {
+        
+        const time = (json["NextBuses"]["NextBus"]["Schedules"]["Schedule"]["ExpectedLeaveTime"]["#text"]).split(" ")[0];
+        const countdown = (json["NextBuses"]["NextBus"]["Schedules"]["Schedule"]["ExpectedCountdown"]["#text"]).split(" ")[0];
+
+        tdisplay.textContent = "Scheduled Departure: " + time;
+        cdisplay.textContent = "In " + countdown + " Minute(s)";
+    }
+    catch(err) {
+        tdisplay.textContent = "No Bus Scheduled";
+        cdisplay.textContent = "N/A";
+    }
 }
 
 function toggle(){
