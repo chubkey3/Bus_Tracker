@@ -1,3 +1,5 @@
+var lasttime = new Date();
+
 // Changes XML to JSON
 function xmlToJson(xml) {
     
@@ -88,8 +90,7 @@ async function call(){
     var tdisplay = document.getElementById('time_display')
     var cdisplay = document.getElementById('countdown_display')
     
-    const updated_time = new Date();
-    var udisplay = document.getElementById('updated_display').textContent = "Last Updated: " + tConvert(addZero(updated_time.getHours()) + ":" + addZero(updated_time.getMinutes()) + ":" + addZero(updated_time.getSeconds()));
+    lasttime = new Date();
     
     try {
         
@@ -103,6 +104,12 @@ async function call(){
         tdisplay.textContent = "No Bus Scheduled";
         cdisplay.textContent = "N/A";
     }
+}
+
+function updatetime(){
+    const updated_time = new Date();
+    //var udisplay = document.getElementById('updated_display').textContent = "Last Updated: " + tConvert(addZero(updated_time.getHours()) + ":" + addZero(updated_time.getMinutes()) + ":" + addZero(updated_time.getSeconds()));
+    var udispalay = document.getElementById('updated_display').textContent = updated_time-lasttime;
 }
 
 function toggle(){
