@@ -125,7 +125,7 @@ settheme();
 
 window.onload = call;
 
-
+var interval = window.setInterval(call, 1000);
 
 /*
 To be added
