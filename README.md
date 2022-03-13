@@ -10,7 +10,7 @@
 <li>Open Source </li>
 </ul>
 
-**Website can be viewed [here](https://ravager6969.github.io/Bus_Tracker).**
+**Website Can be Viewed [Here](https://ravager6969.github.io/Bus_Tracker).**
 
 **Built Using the Official Translink [OpenAPI](https://developer.translink.ca):**
 
