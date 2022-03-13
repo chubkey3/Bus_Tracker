@@ -84,7 +84,6 @@ function tConvert (time) {
 }
 
 async function call(){
-    console.log(stop);
     let response = await fetch('https://api.translink.ca/rttiapi/v1/stops/'+stop+'/estimates?apikey=8dBFRSNBr4HQDO6mi9Ee&count=1&routeNo='+route);
 
     
@@ -94,8 +93,6 @@ async function call(){
     let test = parseXml(data);
     let json_data =  parseXml(data);
     let json = JSON.parse(JSON.stringify(xmlToJson(json_data)));
-
-    console.log(json);
     
     var tdisplay = document.getElementById('time_display')
     var cdisplay = document.getElementById('countdown_display')
@@ -111,7 +108,6 @@ async function call(){
         cdisplay.textContent = "In " + countdown + " Minute(s)";
     }
     catch(err) {
-        console.log(err);
         tdisplay.textContent = "No Bus Scheduled";
         cdisplay.textContent = "N/A";
     }
@@ -341,7 +337,6 @@ var update_interval = window.setInterval(updatetime, 1000);
 
 /*
 To be added
--provide input fields to specify which bus and which stop number
 -troubleshoot inaccurate location data
 -add distance option for filtering bus stops nearby
 */
