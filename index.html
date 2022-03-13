@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Bus Tracker</title>
+<link rel="icon" href="icon.png">
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script type="text/javascript" src="src.js"></script>
+</head>
+<body id="body">
+    <label class="switch">
+        <input id="switch" type="checkbox" onclick="toggle()">
+        <span class="slider round"></span>
+    </label>
+    <img id="moon" src="moon2.png" width="40px" height="40px">
+    <div class = "display">
+        <h1 id="title">Bus Schedule</h1>
+        <!--<div class = "displays">
+        <span style="background:#24344D; padding: 250px; position: absolute; z-index: -1; top: 0; margin-top: 4%; width: 15%; padding-bottom: 190px;"></span>
+        </div>-->
+        <h3 id="time_display"></h1>
+        <h3 id="countdown_display"></h1>
+        <h3 id="updated_display"></h1>
+        
+        <h2 id="stop#">Stop #</h2>
+        <input id="input" placeholder="Enter Stop Number" value="61112" autocomplete="off" onclick="document.getElementById('input').select();">
+        <h2 id="route#">Route #</h2>
+        <input id="input2" placeholder="Enter Route Number" value="33" autocomplete="off" onclick="document.getElementById('input2').select();">
+        <button id="next_bus" onclick="get_bus()">Get Next Bus</button>
+        <input id="distance" type="range" min="1" max="20" oninput="document.getElementById('distance_display').textContent = 'Distance: '+this.value*100+'m';" step=1 value="5">
+        <div class="distance_markers">
+        <span class="range">100m</span><span id="distance_display">Distance: 500m</span><span class="range">2000m</span>
+        </div>
+        <button id="get_location" onclick="getlocation()">Search</button>
+        
+        <ol id="routes"></ol>
+        <h1 id="stops_display">Stops</h1>
+        <ol id="stops"></ol>
+
+        
+    </div>
+
+    <footer id="footer" class="footer">Made Using Translink's <a id="openapilink" href="https://developer.translink.ca">OpenAPI</a> <br> Jason Louie <a id="github_icon" href="https://www.github.com/Ravager6969" class = "icon"><i class="fa">&#xf09b;</i></a></footer>
+    <!--<img src="bus.gif">-->
+
+</body>
+</html>
